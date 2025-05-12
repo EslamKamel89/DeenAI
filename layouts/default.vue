@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full w-full relative overflow-x-hidden">
-    <div class="absolute inset-x-0 inset-y-0">
-      <img src="/assets/bg.png" class="w-full h-full bg-cover" alt="" />
+  <div class="relative min-h-screen w-full overflow-x-hidden">
+    <div class="fixed inset-0">
+      <img src="/assets/bg.png" class="h-full w-full object-cover" alt="" />
     </div>
     <div class="">
       <slot />
@@ -11,4 +11,11 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style>
+html,
+body,
+#__nuxt {
+  width: 100%;
+  height: 100%;
+}
+</style>
