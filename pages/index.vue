@@ -6,11 +6,13 @@
       <div
         class="w-full max-w-3xl rounded-3xl bg-white/80 p-6 shadow-xl backdrop-blur-lg"
       >
-        <StartMain />
-        <ChatMain />
+        <StartMain v-if="!isChatting" />
+        <ChatMain v-else />
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { isChatting } = useAuth();
+</script>
