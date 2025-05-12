@@ -1,4 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useForm } from "vee-validate";
+
+const form = useForm({
+  validationSchema: authSchema,
+});
+const handleSubmit = () => {
+  form.validate();
+  pr(form.values, "form.values");
+};
+</script>
 <template>
   <section class="mb-8 flex flex-col items-center gap-6 text-center">
     <img
@@ -11,12 +21,15 @@
       Your AI companion for Islamic questions, research, and guidance.
     </p>
 
-    <Form class="flex w-full max-w-sm flex-col gap-3">
-      <FormField>
+    <form
+      @submit.prevent="handleSubmit"
+      class="flex w-full max-w-sm flex-col gap-3"
+    >
+      <FormField name="username" v-slot="{ componentField }">
         <FormItem>
-          <FormLabel />
           <FormControl>
             <Input
+              v-bind="componentField"
               type="text"
               placeholder="Enter your name"
               class="w-full rounded-xl border border-emerald-300 px-4 py-2 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
@@ -42,6 +55,12 @@
       >
         Continue Previous Chat
       </button>
-    </Form>
+    </form>
   </section>
 </template>
+
+<style scoped>
+.text-destructive-foreground {
+  color: red;
+}
+</style>
