@@ -11,12 +11,22 @@
       Your AI companion for Islamic questions, research, and guidance.
     </p>
 
-    <form class="flex w-full max-w-sm flex-col gap-3">
-      <input
-        type="text"
-        placeholder="Enter your name"
-        class="w-full rounded-xl border border-emerald-300 px-4 py-2 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-      />
+    <Form class="flex w-full max-w-sm flex-col gap-3">
+      <FormField>
+        <FormItem>
+          <FormLabel />
+          <FormControl>
+            <Input
+              type="text"
+              placeholder="Enter your name"
+              class="w-full rounded-xl border border-emerald-300 px-4 py-2 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+            />
+          </FormControl>
+          <FormDescription />
+          <FormMessage />
+        </FormItem>
+      </FormField>
+
       <small class="text-slate-500 italic"
         >So DeenAI knows who it's talking to.</small
       >
@@ -32,6 +42,6 @@
       >
         Continue Previous Chat
       </button>
-    </form>
+    </Form>
   </section>
 </template>
