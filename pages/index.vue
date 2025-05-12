@@ -2,40 +2,40 @@
   <div
     class="min-h-screen w-full bg-gradient-to-b from-green-50 via-emerald-100 to-green-200 font-sans"
   >
-    <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="flex min-h-screen items-center justify-center p-4">
       <div
-        class="w-full max-w-3xl bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-6"
+        class="w-full max-w-3xl rounded-3xl bg-white/80 p-6 shadow-xl backdrop-blur-lg"
       >
         <!-- Start Screen -->
-        <section class="flex flex-col items-center gap-6 text-center mb-8">
+        <section class="mb-8 flex flex-col items-center gap-6 text-center">
           <img
             src="/assets/bruno.svg"
             alt="Bruno"
-            class="w-36 h-36 rounded-full shadow border-4 border-emerald-200"
+            class="h-36 w-36 rounded-full border-4 border-emerald-200 shadow"
           />
           <h1 class="text-3xl font-bold text-emerald-900">Welcome to DeenAI</h1>
-          <p class="text-slate-600 max-w-md">
+          <p class="max-w-md text-slate-600">
             Your AI companion for Islamic questions, research, and guidance.
           </p>
 
-          <form class="flex flex-col gap-3 w-full max-w-sm">
+          <form class="flex w-full max-w-sm flex-col gap-3">
             <input
               type="text"
               placeholder="Enter your name"
-              class="w-full px-4 py-2 text-sm border border-emerald-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder:text-slate-400"
+              class="w-full rounded-xl border border-emerald-300 px-4 py-2 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
             />
             <small class="text-slate-500 italic"
               >So DeenAI knows who it's talking to.</small
             >
             <button
               type="submit"
-              class="bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-xl transition shadow"
+              class="rounded-xl bg-emerald-600 py-2 text-white shadow transition hover:bg-emerald-700"
             >
               Start New Chat
             </button>
             <button
               type="button"
-              class="bg-white border border-emerald-400 text-emerald-700 py-2 rounded-xl hover:bg-emerald-50 transition"
+              class="rounded-xl border border-emerald-400 bg-white py-2 text-emerald-700 transition hover:bg-emerald-50"
             >
               Continue Previous Chat
             </button>
@@ -45,11 +45,11 @@
         <!-- Chat Screen -->
         <section class="flex flex-col space-y-6">
           <!-- Chat Header -->
-          <div class="flex items-center gap-4 pb-4 border-b border-emerald-200">
+          <div class="flex items-center gap-4 border-b border-emerald-200 pb-4">
             <img
               src="/assets/bruno.svg"
               alt="Bruno"
-              class="w-12 h-12 rounded-full border-2 border-emerald-200"
+              class="h-12 w-12 rounded-full border-2 border-emerald-200"
             />
             <div>
               <div class="text-lg font-semibold text-emerald-900">DeenAI</div>
@@ -60,19 +60,19 @@
           </div>
 
           <!-- Chat Messages -->
-          <div class="flex flex-col gap-4 overflow-y-auto max-h-96 px-2">
+          <div class="flex max-h-96 flex-col gap-4 overflow-y-auto px-2">
             <!-- Received Message -->
             <div class="flex items-start gap-3">
               <img
                 src="/assets/bruno.svg"
-                class="w-10 h-10 rounded-full border-2 border-emerald-100"
+                class="h-10 w-10 rounded-full border-2 border-emerald-100"
               />
               <div
-                class="bg-emerald-100 text-slate-800 px-4 py-3 rounded-2xl shadow-sm max-w-[80%]"
+                class="max-w-[80%] rounded-2xl bg-emerald-100 px-4 py-3 text-slate-800 shadow-sm"
               >
                 Assalamu Alaikum! How can I assist you in your Islamic research
                 today?
-                <div class="text-xs text-right text-slate-500 mt-1">
+                <div class="mt-1 text-right text-xs text-slate-500">
                   11:15 AM
                 </div>
               </div>
@@ -81,16 +81,16 @@
             <!-- Sent Message -->
             <div class="flex flex-row-reverse items-start gap-3">
               <div
-                class="bg-white border border-emerald-200 text-slate-800 px-4 py-3 rounded-2xl shadow-sm max-w-[80%]"
+                class="max-w-[80%] rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-slate-800 shadow-sm"
               >
                 Wa Alaikum Salaam. Can you explain the significance of the 5
                 daily prayers?
-                <div class="text-xs text-right text-slate-500 mt-1">
+                <div class="mt-1 text-right text-xs text-slate-500">
                   11:17 AM
                 </div>
               </div>
               <div
-                class="flex items-center justify-center bg-emerald-500 text-white font-bold w-10 h-10 rounded-full shadow"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 font-bold text-white shadow"
               >
                 JS
               </div>
@@ -102,11 +102,11 @@
             <textarea
               rows="2"
               placeholder="Type your message..."
-              class="w-full px-4 py-3 text-sm border border-emerald-300 rounded-2xl shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder:text-slate-400"
+              class="w-full resize-none rounded-2xl border border-emerald-300 px-4 py-3 text-sm shadow-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
             ></textarea>
             <button
               type="submit"
-              class="absolute bottom-3 right-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow transition"
+              class="absolute right-3 bottom-3 rounded-full bg-emerald-600 p-3 text-white shadow transition hover:bg-emerald-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
