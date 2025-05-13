@@ -1,8 +1,14 @@
 <script setup lang="ts">
 const { messages } = useChat();
+onMounted(() => {
+  scrollIntoView("input-form");
+});
+onUpdated(() => {
+  scrollIntoView("input-form");
+});
 </script>
 <template>
-  <section class="flex flex-col space-y-6">
+  <section class="flex flex-1 flex-col space-y-6 overflow-auto overflow-y-auto">
     <!-- Chat Header -->
     <div class="flex items-center gap-4 border-b border-emerald-200 pb-4">
       <img
@@ -17,7 +23,7 @@ const { messages } = useChat();
     </div>
 
     <!-- Chat Messages -->
-    <div class="flex max-h-96 flex-col gap-4 overflow-y-auto px-2">
+    <div class="flex flex-1 flex-col gap-4 px-2">
       <template v-if="messages.length">
         <ChatBubble v-for="message in messages" :key="message.id" :message />
       </template>

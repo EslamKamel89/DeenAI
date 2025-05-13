@@ -11,14 +11,22 @@ const handleSubmit = () => {
       content: message.value,
     });
     message.value = "";
+    scrollIntoView("input-form");
   }
 };
 </script>
 <template>
-  <form class="relative mt-4" @submit.prevent="handleSubmit">
+  <form
+    class="relative mx-4 my-4"
+    @submit.prevent="handleSubmit"
+    id="input-form"
+  >
     <textarea
+      id="input-form"
       rows="2"
       placeholder="Type your message..."
+      @keypress.shiftkey.enter
+      @keypress.enter.prevent="handleSubmit"
       v-model="message"
       class="w-full resize-none rounded-2xl border border-emerald-300 px-4 py-3 text-sm shadow-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
     ></textarea>

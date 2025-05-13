@@ -62,3 +62,14 @@ export const getUserNameInitials = (
 export const formatDate = (date: Date): string => {
   return useDateFormat(date, " hh:mm A").value;
 };
+
+export const scrollIntoView = (id: string) => {
+  const element = document.getElementById(id);
+  nextTick(() => {
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "end",
+    });
+  });
+};
