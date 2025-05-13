@@ -6,7 +6,7 @@
       <div
         class="w-full max-w-3xl rounded-3xl bg-white/80 p-6 shadow-xl backdrop-blur-lg"
       >
-        <StartMain v-if="!isChatting" />
+        <StartMain v-if="!authState.isChatting" />
         <ChatMain v-else />
       </div>
     </div>
@@ -14,5 +14,5 @@
 </template>
 
 <script setup lang="ts">
-const { isChatting } = useAuth();
+const { authState } = useAuth();
 </script>

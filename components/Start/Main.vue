@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 
+const { authState, setAuthState } = useAuth();
 const form = useForm({
   validationSchema: authSchema,
 });
-const handleSubmit = () => {
-  form.validate();
+const handleSubmit = async () => {
+  await form.validate();
+  // if (deepEqual(form.errors.value, {})) return;
+  if (form.errors.value.username) return;
+  setAuthState({ isChatting: true, username: form.values?.username?.trim() });
   pr(form.values, "form.values");
 };
 </script>
