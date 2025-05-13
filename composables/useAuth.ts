@@ -3,7 +3,7 @@ type AuthState = {
   username: string;
 };
 export const useAuth = () => {
-  const authState = useState("authState", () => ({
+  const authState = useState<AuthState>("authState", () => ({
     isChatting: false,
     username: "",
   }));
