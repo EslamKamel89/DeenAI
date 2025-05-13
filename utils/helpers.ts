@@ -41,3 +41,20 @@ export const deepEqual = (obj1: any, obj2: any): boolean => {
 
   return true;
 };
+
+export const getUserNameInitials = (
+  username: string | null | undefined,
+): string => {
+  if (!username || username?.trim()) return "GT";
+  const nameParts = username.trim().split(" ");
+  if (nameParts.length === 1) {
+    return (
+      nameParts[0].charAt(0).toUpperCase() +
+      (nameParts[0].length > 1 ? nameParts[0].charAt(1).toUpperCase() : "")
+    );
+  }
+  return (
+    nameParts[0].charAt(0).toUpperCase() +
+    nameParts[nameParts.length - 1].charAt(0).toUpperCase()
+  );
+};
