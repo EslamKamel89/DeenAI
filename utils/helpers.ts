@@ -45,7 +45,7 @@ export const deepEqual = (obj1: any, obj2: any): boolean => {
 export const getUserNameInitials = (
   username: string | null | undefined,
 ): string => {
-  if (!username || username?.trim()) return "GT";
+  if (!username || !username?.trim()) return "GT";
   const nameParts = username.trim().split(" ");
   if (nameParts.length === 1) {
     return (
