@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Send } from "lucide-vue-next";
+
 const { addMessage } = useChat();
 const message = ref("");
 const handleSubmit = () => {
@@ -20,30 +22,11 @@ const handleSubmit = () => {
       v-model="message"
       class="w-full resize-none rounded-2xl border border-emerald-300 px-4 py-3 text-sm shadow-sm placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
     ></textarea>
-    <button
+    <Button
       type="submit"
-      class="absolute right-3 bottom-3 rounded-full bg-emerald-600 p-3 text-white shadow transition hover:bg-emerald-700"
+      class="absolute right-3 bottom-3 h-12 w-12 rounded-full text-white shadow transition"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M22 2L11 13"
-        />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M22 2L15 22L11 13L2 9L22 2Z"
-        />
-      </svg>
-    </button>
+      <Send class="h-7 w-7" />
+    </Button>
   </form>
 </template>

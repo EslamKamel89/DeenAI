@@ -58,3 +58,7 @@ export const getUserNameInitials = (
     nameParts[nameParts.length - 1].charAt(0).toUpperCase()
   );
 };
+
+export const formatDate = (date: Date): string => {
+  return useDateFormat(date, " hh:mm A").value;
+};

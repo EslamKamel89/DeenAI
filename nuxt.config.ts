@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/main.css"],
-  modules: ["shadcn-nuxt"],
+  modules: ["shadcn-nuxt", "@vueuse/nuxt"],
   shadcn: {
     prefix: "",
 

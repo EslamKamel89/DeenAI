@@ -32,8 +32,11 @@ const { username } = toRefs(useAuth().authState.value);
       }"
     >
       {{ message.content }}
-      <div class="mt-1 text-right text-xs text-slate-500">
-        {{ message.createdAt }}
+      <div
+        class="mt-1 text-right text-xs text-slate-500"
+        v-if="message.createdAt"
+      >
+        {{ formatDate(message.createdAt) }}
       </div>
     </div>
   </div>
