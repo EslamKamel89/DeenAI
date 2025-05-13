@@ -1,6 +1,6 @@
 export type MessageState = {
   id?: number;
-  message: string;
+  content: string;
   isUser: boolean;
   username?: string;
   createdAt?: Date;

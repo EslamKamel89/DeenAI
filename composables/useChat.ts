@@ -1,6 +1,6 @@
 import type { MessageState } from "~/types";
 
-export const useChats = () => {
+export const useChat = () => {
   const messages = useState<MessageState[]>("messages", () => []);
   const addMessage = (newMessage: MessageState) => {
     messages.value = [

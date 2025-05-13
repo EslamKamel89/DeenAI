@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { messages } = useChat();
+</script>
 <template>
   <section class="flex flex-col space-y-6">
     <!-- Chat Header -->
@@ -16,15 +18,14 @@
 
     <!-- Chat Messages -->
     <div class="flex max-h-96 flex-col gap-4 overflow-y-auto px-2">
-      <ChatBubble
-        :is-user="false"
-        message="Assalamu Alaikum! How can I assist you in your Islamic research today?"
-      />
-      <ChatBubble
-        :is-user="true"
-        message=" Wa Alaikum Salaam. Can you explain the significance of the 5 daily
-          prayers?"
-      />
+      <template v-if="messages.length">
+        <ChatBubble v-for="message in messages" :key="message.id" :message />
+      </template>
+      <template v-else>
+        <div class="w-full text-center text-sm font-thin">
+          Type Something to start conversation
+        </div>
+      </template>
     </div>
 
     <ChatMessageForm />

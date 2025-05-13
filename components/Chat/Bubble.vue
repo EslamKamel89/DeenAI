@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { MessageState } from "~/types";
+
 const porps = defineProps<{
-  isUser: boolean;
-  message: string;
+  message: MessageState;
 }>();
 const { username } = toRefs(useAuth().authState.value);
 </script>
@@ -9,11 +10,11 @@ const { username } = toRefs(useAuth().authState.value);
   <div
     class="flex items-start gap-3"
     :class="{
-      'flex-row-reverse': isUser,
+      'flex-row-reverse': message.isUser,
     }"
   >
     <img
-      v-if="!isUser"
+      v-if="!message.isUser"
       src="/assets/bruno.svg"
       class="h-10 w-10 rounded-full border-2 border-emerald-100"
     />
@@ -26,12 +27,14 @@ const { username } = toRefs(useAuth().authState.value);
     <div
       class="max-w-[80%] rounded-2xl px-4 py-3 shadow-sm"
       :class="{
-        'border-emerald-200 bg-white text-slate-800': isUser,
-        'bg-emerald-100 text-slate-800': !isUser,
+        'border-emerald-200 bg-white text-slate-800': message.isUser,
+        'bg-emerald-100 text-slate-800': !message.isUser,
       }"
     >
-      {{ message }}
-      <div class="mt-1 text-right text-xs text-slate-500">11:15 AM</div>
+      {{ message.content }}
+      <div class="mt-1 text-right text-xs text-slate-500">
+        {{ message.createdAt }}
+      </div>
     </div>
   </div>
 </template>
